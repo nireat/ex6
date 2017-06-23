@@ -7,15 +7,22 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript">
 	$(function (){
+		var name = 0;
 		var count=0;
 		$("#add").click(function (){
-			count++;
-			if(count<6){
-			var data = '<p><input type="file" name="f1"><span id="dlt">X</span></p>';
-			$("#file").append(data);
-			}else{
-				alert("최대 5개만 가능");
-			}
+				if(count<5){
+				count++;
+				name++;
+				var data = '<p><input type="file" name="f'+name+'"><span class="del">X</span></p>';
+				$("#file").append(data);
+				}else{
+					alert("최대 5개만 가능");
+				}
+		});
+		
+		$("#file").on("click", ".del", function() {
+		$(this).parent().remove();
+		count--;
 		});
 	});
 </script>
