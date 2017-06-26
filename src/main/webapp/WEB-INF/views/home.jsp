@@ -5,12 +5,13 @@
 	<title>Home</title>
 </head>
 <body>
-	<a href="notice/noticeList">notice</a>
 <h1>
 	Hello world!  
 </h1>
 
 <P>  The time on the server is ${serverTime}. </P>
+	<a href="notice/noticeList">NOTICE</a>
+	<a href="memo/memoList">MEMO</a>
 
 </body>
 </html>
