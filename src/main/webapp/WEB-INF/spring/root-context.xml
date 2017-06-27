@@ -1,9 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
+		
+		<!-- 공통 로직 -->
+<!-- 		<bean class="com.choa.aspect.CardCheck" id="cardCheck" />
+		<bean class="com.choa.aspect.Transport" id="transport" />
+		<bean class="com.choa.aspect.Trip" id="trip"/>
+		<aop:config>
+			<aop:aspect id="cardAspect" ref="cardCheck">
+			
+				.. : 하위 모든 디렉터리
+				*() : 해당 클래스의 하위 모든 메서드
+				(..) : 모든 매개 변수(존재 여부와 상관 없음)
+			
+				<aop:pointcut expression="execution(* com.choa.aspect..Transport.*(..))" id="trans"/>
+				<aop:around method="check" pointcut-ref="trans"/>
+			</aop:aspect>
+			<aop:aspect id="cardReserve" ref="cardCheck">
+				<aop:pointcut expression="execution(* com.choa.aspect..Trip.*(..))" id="reserve"/>
+				<aop:before method="reservation" pointcut-ref="reserve"/>
+			</aop:aspect>
+			
+		</aop:config>	 -->
+		
+		
 		
 		<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" id="propertyPlaceholderConfigurer">
 			<property name="locations">

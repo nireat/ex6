@@ -99,6 +99,21 @@
     		<version>${org.springframework-version}</version>
     	<scope>test</scope>
 	</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-tx -->
+	<dependency>
+    	<groupId>org.springframework</groupId>
+    	<artifactId>spring-tx</artifactId>
+    	<version>${org.springframework-version}</version>
+	</dependency>	
+	<!-- https://mvnrepository.com/artifact/org.springframework/spring-aop -->
+	<dependency>
+   	 <groupId>org.springframework</groupId>
+   	 <artifactId>spring-aop</artifactId>
+   	 <version>${org.springframework-version}</version>
+	</dependency>
+	
+	
 		<!-- AspectJ -->
 		<dependency>
 			<groupId>org.aspectj</groupId>
@@ -106,6 +121,12 @@
 			<version>${org.aspectj-version}</version>
 		</dependency>	
 		
+	<!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
+	<dependency>
+   	 <groupId>org.aspectj</groupId>
+   	 <artifactId>aspectjweaver</artifactId>
+  	  <version>${org.aspectj-version}</version>
+	</dependency>
 		<!-- Logging -->
 		<dependency>
 			<groupId>org.slf4j</groupId>

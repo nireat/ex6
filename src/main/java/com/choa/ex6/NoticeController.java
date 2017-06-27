@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -36,7 +37,16 @@ public class NoticeController {
 	@RequestMapping(value="noticeList", method=RequestMethod.GET)
 	public String noticeList(Model model, ListInfo listInfo) throws Exception{
 		System.out.println(listInfo.getCurPage());
-	List<BoardDTO> ar=noticeService.boardList(listInfo);
+		List<BoardDTO> ar=noticeService.boardList(listInfo);
+		System.out.println(ar.get(1000).getTitle());
+		/*try {
+			System.out.println(ar.get(1000).getTitle());
+			throw new IndexOutOfBoundsException();
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		} -> @ControllerAdvice에서 exception 처리 */
 		model.addAttribute("list", ar);
 		model.addAttribute("board", "notice");
 		model.addAttribute("listInfo", listInfo);
@@ -109,4 +119,5 @@ public class NoticeController {
 		rd.addFlashAttribute("message", message);
 		return "redirect:/notice/noticeList?curPage=1";
 	}
+	
 }
